@@ -1,24 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zdX-Lp-tH8">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--List-->
+        <scene sceneID="fMg-ea-vla">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController title="List" id="hnT-J5-1x0" customClass="ListViewController" customModule="Fooding" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Os0-jA-Cix">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="1QT-Y6-P3b"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="" image="list-48" id="AS0-ti-hhz"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9uv-ek-4DL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="334.78260869565219" y="890.625"/>
+        </scene>
+        <!--Barcode Scan-->
+        <scene sceneID="PHo-cJ-DZh">
+            <objects>
+                <viewController title="Barcode Scan" id="k2J-ey-fQn" customClass="BarcodeScanViewController" customModule="Fooding" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="31L-A1-4NE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xm6-b7-LhV" customClass="BarcodeScannerView" customModule="Fooding" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TNh-gh-2yI" firstAttribute="trailing" secondItem="xm6-b7-LhV" secondAttribute="trailing" id="6rj-Ex-OOV"/>
+                            <constraint firstItem="xm6-b7-LhV" firstAttribute="leading" secondItem="TNh-gh-2yI" secondAttribute="leading" id="Cp8-aV-3n9"/>
+                            <constraint firstItem="TNh-gh-2yI" firstAttribute="bottom" secondItem="xm6-b7-LhV" secondAttribute="bottom" id="TbJ-1e-Qhy"/>
+                            <constraint firstItem="xm6-b7-LhV" firstAttribute="top" secondItem="31L-A1-4NE" secondAttribute="top" id="aUP-Uu-ZE7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TNh-gh-2yI"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="barcode-48" id="hLv-fJ-vxe"/>
+                    <connections>
+                        <outlet property="barcodeScanView" destination="xm6-b7-LhV" id="ECA-4S-Dzj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xu0-U5-8Ln" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="336" y="242"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="7Sl-VP-IxO">
+            <objects>
+                <tabBarController id="zdX-Lp-tH8" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qZy-5e-trj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="k2J-ey-fQn" kind="relationship" relationship="viewControllers" id="sNB-to-ogY"/>
+                        <segue destination="hnT-J5-1x0" kind="relationship" relationship="viewControllers" id="CiZ-Bp-mBy"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lj7-ey-LSf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-583" y="567"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="barcode-48" width="24" height="24"/>
+        <image name="list-48" width="24" height="24"/>
+    </resources>
 </document>

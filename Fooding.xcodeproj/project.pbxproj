@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		710F8DFD2348DC7C00B3B057 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710F8DFC2348DC7C00B3B057 /* AppDelegate.swift */; };
-		710F8DFF2348DC7C00B3B057 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710F8DFE2348DC7C00B3B057 /* ViewController.swift */; };
+		710F8DFF2348DC7C00B3B057 /* BarcodeScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710F8DFE2348DC7C00B3B057 /* BarcodeScanViewController.swift */; };
 		710F8E022348DC7C00B3B057 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 710F8E002348DC7C00B3B057 /* Main.storyboard */; };
 		710F8E042348DC8100B3B057 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 710F8E032348DC8100B3B057 /* Assets.xcassets */; };
 		710F8E072348DC8100B3B057 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 710F8E052348DC8100B3B057 /* LaunchScreen.storyboard */; };
 		710F8E122348DC8200B3B057 /* FoodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710F8E112348DC8200B3B057 /* FoodingTests.swift */; };
+		710F8E1F2348E4AF00B3B057 /* BarcodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710F8E1E2348E4AF00B3B057 /* BarcodeScannerView.swift */; };
+		710F8E212348E5DC00B3B057 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710F8E202348E5DC00B3B057 /* ListViewController.swift */; };
+		71DD794F2349D9BB00139E87 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD794E2349D9BB00139E87 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +31,7 @@
 /* Begin PBXFileReference section */
 		710F8DF92348DC7C00B3B057 /* Fooding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fooding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		710F8DFC2348DC7C00B3B057 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		710F8DFE2348DC7C00B3B057 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		710F8DFE2348DC7C00B3B057 /* BarcodeScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScanViewController.swift; sourceTree = "<group>"; };
 		710F8E012348DC7C00B3B057 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		710F8E032348DC8100B3B057 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		710F8E062348DC8100B3B057 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +39,9 @@
 		710F8E0D2348DC8200B3B057 /* FoodingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		710F8E112348DC8200B3B057 /* FoodingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodingTests.swift; sourceTree = "<group>"; };
 		710F8E132348DC8200B3B057 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		710F8E1E2348E4AF00B3B057 /* BarcodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerView.swift; sourceTree = "<group>"; };
+		710F8E202348E5DC00B3B057 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		71DD794E2349D9BB00139E87 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +83,10 @@
 		710F8DFB2348DC7C00B3B057 /* Fooding */ = {
 			isa = PBXGroup;
 			children = (
+				71DD794D2349D99A00139E87 /* Util */,
+				710F8E1D2348E49E00B3B057 /* Views */,
+				710F8E1C2348E2BC00B3B057 /* ViewControllers */,
 				710F8DFC2348DC7C00B3B057 /* AppDelegate.swift */,
-				710F8DFE2348DC7C00B3B057 /* ViewController.swift */,
 				710F8E002348DC7C00B3B057 /* Main.storyboard */,
 				710F8E032348DC8100B3B057 /* Assets.xcassets */,
 				710F8E052348DC8100B3B057 /* LaunchScreen.storyboard */,
@@ -94,6 +102,31 @@
 				710F8E132348DC8200B3B057 /* Info.plist */,
 			);
 			path = FoodingTests;
+			sourceTree = "<group>";
+		};
+		710F8E1C2348E2BC00B3B057 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				710F8DFE2348DC7C00B3B057 /* BarcodeScanViewController.swift */,
+				710F8E202348E5DC00B3B057 /* ListViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		710F8E1D2348E49E00B3B057 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				710F8E1E2348E4AF00B3B057 /* BarcodeScannerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		71DD794D2349D99A00139E87 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				71DD794E2349D9BB00139E87 /* Colors.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,7 +230,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				710F8DFF2348DC7C00B3B057 /* ViewController.swift in Sources */,
+				710F8E1F2348E4AF00B3B057 /* BarcodeScannerView.swift in Sources */,
+				71DD794F2349D9BB00139E87 /* Colors.swift in Sources */,
+				710F8DFF2348DC7C00B3B057 /* BarcodeScanViewController.swift in Sources */,
+				710F8E212348E5DC00B3B057 /* ListViewController.swift in Sources */,
 				710F8DFD2348DC7C00B3B057 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
