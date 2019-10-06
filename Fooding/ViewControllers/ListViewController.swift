@@ -9,11 +9,19 @@
 import UIKit
 
 class ListViewController: UIViewController {
+    
+    @IBOutlet fileprivate weak var productTableView: ProductTableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.view.backgroundColor = .lightGrey
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationItem.largeTitleDisplayMode = .automatic
+        let searchController = UISearchController(searchResultsController: nil)
+        self.navigationItem.searchController = searchController
+        
+        productTableView.reloadData()
     }
 }
