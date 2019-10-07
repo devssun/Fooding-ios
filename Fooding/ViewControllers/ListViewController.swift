@@ -22,6 +22,15 @@ class ListViewController: UIViewController {
         let searchController = UISearchController(searchResultsController: nil)
         self.navigationItem.searchController = searchController
         
+        productTableView.selectDelegate = self
         productTableView.reloadData()
+    }
+}
+
+extension ListViewController: ProductTableViewDelegate {
+    func selectProduct() {
+        if let productDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProductDetailViewController") as? ProductDetailViewController {
+           self.navigationController?.pushViewController(productDetailViewController, animated: true)
+        }
     }
 }

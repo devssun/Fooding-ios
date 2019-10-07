@@ -19,6 +19,7 @@
 		71DD79512349E47800139E87 /* ProductTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD79502349E47800139E87 /* ProductTableView.swift */; };
 		71DD79532349E55300139E87 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD79522349E55300139E87 /* ProductTableViewCell.swift */; };
 		71DD7955234A277600139E87 /* ProductGradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD7954234A277600139E87 /* ProductGradeView.swift */; };
+		71DD7957234A2C9900139E87 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD7956234A2C9900139E87 /* ProductDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		71DD79502349E47800139E87 /* ProductTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableView.swift; sourceTree = "<group>"; };
 		71DD79522349E55300139E87 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		71DD7954234A277600139E87 /* ProductGradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductGradeView.swift; sourceTree = "<group>"; };
+		71DD7956234A2C9900139E87 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 			children = (
 				710F8DFE2348DC7C00B3B057 /* BarcodeScanViewController.swift */,
 				710F8E202348E5DC00B3B057 /* ListViewController.swift */,
+				71DD7956234A2C9900139E87 /* ProductDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			files = (
 				71DD7955234A277600139E87 /* ProductGradeView.swift in Sources */,
 				710F8E1F2348E4AF00B3B057 /* BarcodeScannerView.swift in Sources */,
+				71DD7957234A2C9900139E87 /* ProductDetailViewController.swift in Sources */,
 				71DD794F2349D9BB00139E87 /* Colors.swift in Sources */,
 				71DD79532349E55300139E87 /* ProductTableViewCell.swift in Sources */,
 				710F8DFF2348DC7C00B3B057 /* BarcodeScanViewController.swift in Sources */,

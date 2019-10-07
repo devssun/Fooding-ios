@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol ProductTableViewDelegate: class {
+    func selectProduct()
+}
+
 class ProductTableView: UITableView {
+    weak var selectDelegate: ProductTableViewDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         commonInit()
@@ -49,6 +55,6 @@ extension ProductTableView: UITableViewDataSource {
 
 extension ProductTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        selectDelegate?.selectProduct()
     }
 }
