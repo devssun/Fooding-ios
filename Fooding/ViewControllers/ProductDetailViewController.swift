@@ -21,6 +21,8 @@ class ProductDetailViewController: UIViewController {
     @IBOutlet fileprivate weak var companyNameLabel: UILabel!
     @IBOutlet fileprivate weak var companyAddressLabel: UILabel!
     @IBOutlet fileprivate weak var companyContactLabel: UILabel!
+    
+    var item: Row?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +31,23 @@ class ProductDetailViewController: UIViewController {
         self.view.backgroundColor = .lightGrey
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.largeTitleDisplayMode = .automatic
-        self.navigationItem.title = "제품명"
+        self.navigationItem.title = item?.prdtnm
         self.productImageView.contentMode = .scaleAspectFill
+        self.productRecallLabel.textColor = .pomegranate
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        productImageView.image = UIImage(data: item!.imageData)
+        productRecallLabel.text = item?.rtrvlprvns
+        actionDateLabel.text = item?.cretDtm
+        productGradeView.grade = Grade(rawValue: item!.rtrvlGrdcdNm)!
+        productionDateLabel.text = item?.mnfdt
+        expirationDateLabel.text = item?.distbtmlmt
+        packingUnitLabel.text = item?.frmlcunit
+        productCategoryLabel.text = item?.prdlstType
+        companyNameLabel.text = item?.bsshnm
+        companyAddressLabel.text = item?.addr
+        companyContactLabel.text = item?.prcscitypointTelno
     }
 }

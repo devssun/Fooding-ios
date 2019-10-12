@@ -11,7 +11,7 @@ import UIKit
 class ListViewController: UIViewController {
     
     @IBOutlet fileprivate weak var productTableView: ProductTableView!
-
+    fileprivate var dataItems: Recall!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,6 +33,7 @@ class ListViewController: UIViewController {
             return
         }
         
+        dataItems = data
         DispatchQueue.main.async {
             self.productTableView.items = data.i0490.row
             self.productTableView.reloadData()
@@ -41,8 +42,10 @@ class ListViewController: UIViewController {
 }
 
 extension ListViewController: ProductTableViewDelegate {
-    func selectProduct() {
-        if let productDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProductDetailViewController") as? ProductDetailViewController {
+    func selectProduct(_ index: Int) {
+        if let productDetailViewController =
+            self.storyboard?.instantiateViewController(withIdentifier: "ProductDetailViewController") as? ProductDetailViewController {
+            productDetailViewController.item = dataItems.i0490.row[index]
            self.navigationController?.pushViewController(productDetailViewController, animated: true)
         }
     }

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ProductTableViewDelegate: class {
-    func selectProduct()
+    func selectProduct(_ index: Int)
 }
 
 class ProductTableView: UITableView {
@@ -57,6 +57,6 @@ extension ProductTableView: UITableViewDataSource {
 
 extension ProductTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectDelegate?.selectProduct()
+        selectDelegate?.selectProduct(indexPath.row)
     }
 }

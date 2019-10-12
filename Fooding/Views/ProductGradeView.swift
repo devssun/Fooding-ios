@@ -89,6 +89,7 @@ class ProductGradeView: UIView {
     }
     
     override func draw(_ rect: CGRect) {
+        self.backgroundColor = .clear
         containerView.layer.cornerRadius = containerView.frame.width / 2
     }
 }
