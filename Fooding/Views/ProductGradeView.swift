@@ -8,12 +8,22 @@
 
 import UIKit
 
-class ProductGradeView: UIView {
+public enum Grade: String {
+    case first = "1등급"
+    case second = "2등급"
+    case third = "3등급"
+    case other = ""
     
+    var value: String {
+        return rawValue
+    }
+}
+
+class ProductGradeView: UIView {    
     private let containerView: UIView = {
        let lv = UIView()
         lv.translatesAutoresizingMaskIntoConstraints = false
-        lv.backgroundColor = .lightGrey
+        lv.backgroundColor = .white
         lv.clipsToBounds = true
         lv.layer.masksToBounds = false
         return lv
@@ -21,12 +31,34 @@ class ProductGradeView: UIView {
     
     private let gradeLabel: UILabel = {
        let lb = UILabel()
-        lb.text = "1급"
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.textColor = .white
-        lb.font = UIFont.boldSystemFont(ofSize: 24.0)
+        lb.adjustsFontSizeToFitWidth = true
+        lb.textAlignment = .center
+        lb.font = UIFont.boldSystemFont(ofSize: 20.0)
         return lb
     }()
+    
+    var grade: Grade = .other {
+        didSet {
+            gradeLabel.text = grade.value
+            switch grade {
+            case .first:
+                containerView.backgroundColor = .pomegranate
+                gradeLabel.textColor = .white
+            case .second:
+                containerView.backgroundColor = .pumpkin
+                gradeLabel.textColor = .white
+            case .third:
+                containerView.backgroundColor = .orange
+                gradeLabel.textColor = .white
+            case .other:
+                containerView.backgroundColor = .lightGrey
+                gradeLabel.textColor = .black
+                gradeLabel.text = "등급없음"
+            }
+        }
+    }
     
     private func commonInit() {
         self.addSubview(containerView)
@@ -35,10 +67,11 @@ class ProductGradeView: UIView {
         containerView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         containerView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         containerView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        gradeLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        gradeLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         
-        containerView.layer.cornerRadius = containerView.frame.width / 2
+        gradeLabel.topAnchor.constraint(equalTo: self.containerView.topAnchor).isActive = true
+        gradeLabel.leadingAnchor.constraint(equalTo: self.containerView.leadingAnchor, constant: 5.0).isActive = true
+        gradeLabel.trailingAnchor.constraint(equalTo: self.containerView.trailingAnchor, constant: -5.0).isActive = true
+        gradeLabel.bottomAnchor.constraint(equalTo: self.containerView.bottomAnchor).isActive = true
     }
     
     override func awakeFromNib() {
@@ -53,5 +86,9 @@ class ProductGradeView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    override func draw(_ rect: CGRect) {
+        containerView.layer.cornerRadius = containerView.frame.width / 2
     }
 }

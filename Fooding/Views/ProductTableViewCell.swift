@@ -14,7 +14,17 @@ class ProductTableViewCell: UITableViewCell {
     @IBOutlet fileprivate weak var productImageView: UIImageView!
     @IBOutlet fileprivate weak var productNameLabel: UILabel!
     @IBOutlet fileprivate weak var productRecallLabel: UILabel!
-
+    @IBOutlet fileprivate weak var productRecallGradeView: ProductGradeView!
+    
+    var item: Row? {
+        didSet {
+            productImageView.image = UIImage(data: item!.imageData)
+            productNameLabel.text = item?.prdtnm
+            productRecallLabel.text = item?.rtrvlprvns
+            productRecallGradeView.grade = Grade(rawValue: item!.rtrvlGrdcdNm)!
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,5 +34,13 @@ class ProductTableViewCell: UITableViewCell {
         self.productImageView.clipsToBounds = true
         self.productImageView.contentMode = .scaleAspectFill
         self.productImageView.layer.cornerRadius = 10.0
+        self.productRecallLabel.textColor = .pomegranate
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        productImageView.image = nil
+        productNameLabel.text = nil
+        productRecallLabel.text = nil
     }
 }

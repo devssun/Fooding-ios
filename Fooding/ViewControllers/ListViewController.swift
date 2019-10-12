@@ -23,7 +23,20 @@ class ListViewController: UIViewController {
         self.navigationItem.searchController = searchController
         
         productTableView.selectDelegate = self
-        productTableView.reloadData()
+        
+        requestProductList(.recall)
+        NotificationCenter.default.addObserver(self, selector: #selector(didReceiveProductList(_:)), name: DidReceiveProductList, object: nil)
+    }
+    
+    @objc func didReceiveProductList(_ noti: Notification) {
+        guard let data = noti.userInfo?["data"] as? Recall else {
+            return
+        }
+        
+        DispatchQueue.main.async {
+            self.productTableView.items = data.i0490.row
+            self.productTableView.reloadData()
+        }
     }
 }
 

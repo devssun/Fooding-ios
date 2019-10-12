@@ -14,6 +14,7 @@ protocol ProductTableViewDelegate: class {
 
 class ProductTableView: UITableView {
     weak var selectDelegate: ProductTableViewDelegate?
+    var items = [Row]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,12 +41,13 @@ class ProductTableView: UITableView {
 
 extension ProductTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "productCell", for: indexPath) as? ProductTableViewCell {
             cell.selectionStyle = .none
+            cell.item = items[indexPath.row]
             return cell
         }
         

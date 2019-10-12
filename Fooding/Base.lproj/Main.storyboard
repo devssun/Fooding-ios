@@ -40,7 +40,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ng7-Qj-pxE">
-                                                            <rect key="frame" x="112" y="27.5" width="182" height="53.5"/>
+                                                            <rect key="frame" x="112" y="28.5" width="182" height="51"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label12345678654321`234ㄷㄱ567865435678" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4BT-Uz-QQX">
                                                                     <rect key="frame" x="0.0" y="0.0" width="182" height="29"/>
@@ -49,8 +49,8 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label23456787654321345" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPZ-0k-o7p">
-                                                                    <rect key="frame" x="0.0" y="34" width="182" height="19.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                    <rect key="frame" x="0.0" y="34" width="182" height="17"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -88,6 +88,7 @@
                                             <outlet property="containerView" destination="h3h-wJ-eWE" id="Mot-1o-Jxb"/>
                                             <outlet property="productImageView" destination="s6b-nj-XFg" id="iXh-na-sb5"/>
                                             <outlet property="productNameLabel" destination="4BT-Uz-QQX" id="fcx-BX-g8h"/>
+                                            <outlet property="productRecallGradeView" destination="LWK-T0-PMH" id="7r4-Pg-oz6"/>
                                             <outlet property="productRecallLabel" destination="wPZ-0k-o7p" id="Ot7-PJ-CfS"/>
                                         </connections>
                                     </tableViewCell>
