@@ -24,4 +24,8 @@ extension UIColor {
     @nonobjc class var orange: UIColor {    // f39c12
         return UIColor(red: 243/255, green: 156/255, blue: 18/255, alpha: 1.0)
     }
+    
+    @nonobjc class var belizeHole: UIColor { // 2980b9
+        return UIColor(red: 41/255, green: 128/255, blue: 185/255, alpha: 1.0)
+    }
 }
