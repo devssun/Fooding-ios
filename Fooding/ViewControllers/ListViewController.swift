@@ -10,6 +10,7 @@ import UIKit
 
 class ListViewController: UIViewController {
     
+    @IBOutlet fileprivate weak var customerDeclarationButton: UIBarButtonItem!
     @IBOutlet fileprivate weak var productTableView: ProductTableView!
     fileprivate var dataItems: Recall!
     fileprivate var filteredItems = [Row]()
@@ -34,6 +35,8 @@ class ListViewController: UIViewController {
         
         requestProductList(.recall)
         NotificationCenter.default.addObserver(self, selector: #selector(didReceiveProductList(_:)), name: DidReceiveProductList, object: nil)
+        customerDeclarationButton.target = self
+        customerDeclarationButton.action = #selector(touchedCustomerDeclarationButton(_:))
     }
     
     @objc func didReceiveProductList(_ noti: Notification) {
@@ -46,6 +49,26 @@ class ListViewController: UIViewController {
             self.productTableView.items = data.i0490.row
             self.productTableView.reloadData()
         }
+    }
+    
+    @objc private func touchedCustomerDeclarationButton(_ sender: UIBarButtonItem) {
+        // 소비자 신고
+        let alertController = UIAlertController(title: "소비자 신고", message: "구입한 식품에 이상이 있다면 아래에 신고하세요", preferredStyle: .actionSheet)
+        let callAction = UIAlertAction(title: "식품안전 소비자 신고센터 1399", style: .default) { (_) in
+            if let tel = URL(string: "tel://1399") {
+                UIApplication.shared.open(tel, options: [:], completionHandler: nil)
+            }
+        }
+        let webAction = UIAlertAction(title: "식품의약품안전처 통합민원상담서비스 홈페이지", style: .default) { (_) in
+            if let url = URL(string: "https://www.foodsafetykorea.go.kr/minwon/complain/customerNotify.do?menu_no=621&menu_grp=MENU_GRP24") {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        alertController.addAction(callAction)
+        alertController.addAction(webAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 

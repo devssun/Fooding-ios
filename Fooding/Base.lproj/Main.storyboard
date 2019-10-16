@@ -105,9 +105,11 @@
                         <viewLayoutGuide key="safeArea" id="1QT-Y6-P3b"/>
                     </view>
                     <navigationItem key="navigationItem" title="Fooding" id="TgJ-Dt-BAO">
+                        <barButtonItem key="leftBarButtonItem" title="소비자신고" id="1p8-ER-rWV"/>
                         <barButtonItem key="rightBarButtonItem" image="more" id="Pic-mA-JeW"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="customerDeclarationButton" destination="1p8-ER-rWV" id="pdO-2E-8Zu"/>
                         <outlet property="productTableView" destination="Ouy-kt-9gx" id="4Kh-gA-pPZ"/>
                         <outlet property="searchDisplayController" destination="t5p-bk-uEH" id="D7q-Ww-HhE"/>
                     </connections>
