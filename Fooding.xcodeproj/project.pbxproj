@@ -18,6 +18,8 @@
 		712D8B7B2357614E0029372A /* ScanResultPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712D8B7A2357614E0029372A /* ScanResultPopupView.swift */; };
 		712D8B7D235761620029372A /* ScanResultPopupViewXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 712D8B7C235761620029372A /* ScanResultPopupViewXib.xib */; };
 		712D8B7F23587BB10029372A /* ScanResultPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712D8B7E23587BB10029372A /* ScanResultPopupViewController.swift */; };
+		712D8B81235899D20029372A /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712D8B80235899D20029372A /* SettingViewController.swift */; };
+		712D8B8323589BA90029372A /* SettingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712D8B8223589BA90029372A /* SettingTableView.swift */; };
 		71DD794F2349D9BB00139E87 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD794E2349D9BB00139E87 /* Colors.swift */; };
 		71DD79512349E47800139E87 /* ProductTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD79502349E47800139E87 /* ProductTableView.swift */; };
 		71DD79532349E55300139E87 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD79522349E55300139E87 /* ProductTableViewCell.swift */; };
@@ -54,6 +56,8 @@
 		712D8B7A2357614E0029372A /* ScanResultPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultPopupView.swift; sourceTree = "<group>"; };
 		712D8B7C235761620029372A /* ScanResultPopupViewXib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanResultPopupViewXib.xib; sourceTree = "<group>"; };
 		712D8B7E23587BB10029372A /* ScanResultPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultPopupViewController.swift; sourceTree = "<group>"; };
+		712D8B80235899D20029372A /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		712D8B8223589BA90029372A /* SettingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableView.swift; sourceTree = "<group>"; };
 		71DD794E2349D9BB00139E87 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		71DD79502349E47800139E87 /* ProductTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableView.swift; sourceTree = "<group>"; };
 		71DD79522349E55300139E87 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				710F8DFE2348DC7C00B3B057 /* BarcodeScanViewController.swift */,
+				712D8B80235899D20029372A /* SettingViewController.swift */,
 				710F8E202348E5DC00B3B057 /* ListViewController.swift */,
 				71DD7956234A2C9900139E87 /* ProductDetailViewController.swift */,
 				712D8B7E23587BB10029372A /* ScanResultPopupViewController.swift */,
@@ -145,6 +150,7 @@
 				71DD7954234A277600139E87 /* ProductGradeView.swift */,
 				712D8B7A2357614E0029372A /* ScanResultPopupView.swift */,
 				712D8B7C235761620029372A /* ScanResultPopupViewXib.xib */,
+				712D8B8223589BA90029372A /* SettingTableView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -271,9 +277,11 @@
 			files = (
 				71DD7955234A277600139E87 /* ProductGradeView.swift in Sources */,
 				712D8B7F23587BB10029372A /* ScanResultPopupViewController.swift in Sources */,
+				712D8B8323589BA90029372A /* SettingTableView.swift in Sources */,
 				71DD7960234B8A0C00139E87 /* Recall.swift in Sources */,
 				710F8E1F2348E4AF00B3B057 /* BarcodeScannerView.swift in Sources */,
 				712D8B7B2357614E0029372A /* ScanResultPopupView.swift in Sources */,
+				712D8B81235899D20029372A /* SettingViewController.swift in Sources */,
 				71DD7957234A2C9900139E87 /* ProductDetailViewController.swift in Sources */,
 				71DD794F2349D9BB00139E87 /* Colors.swift in Sources */,
 				71DD795D234B871100139E87 /* FoodSafeAPIType.swift in Sources */,
