@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ScanResultPopupView" customModule="Fooding" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bhh-i0-v43">
+                    <rect key="frame" x="24" y="322" width="366" height="252.5"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="tgJ-k0-30m">
+                            <rect key="frame" x="0.0" y="16" width="366" height="180.5"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wcr-a7-5Ty" customClass="ProductGradeView" customModule="Fooding" customModuleProvider="target">
+                                    <rect key="frame" x="133" y="0.0" width="100" height="100"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="100" id="Mxm-Ko-Bqr"/>
+                                        <constraint firstAttribute="width" secondItem="wcr-a7-5Ty" secondAttribute="height" multiplier="1:1" id="W9f-1P-bNV"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RwI-fX-a0Z">
+                                    <rect key="frame" x="152.5" y="116" width="61.5" height="29"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8n-I3-XfA">
+                                    <rect key="frame" x="163.5" y="161" width="39.5" height="19.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ti-XV-awz">
+                            <rect key="frame" x="0.0" y="212.5" width="366" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="pD5-GM-WMW"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <state key="normal" title="닫기"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="5Ti-XV-awz" firstAttribute="width" secondItem="bhh-i0-v43" secondAttribute="width" id="1Ac-d4-waf"/>
+                        <constraint firstItem="tgJ-k0-30m" firstAttribute="top" secondItem="bhh-i0-v43" secondAttribute="top" constant="16" id="5i6-Uv-R7d"/>
+                        <constraint firstItem="5Ti-XV-awz" firstAttribute="leading" secondItem="bhh-i0-v43" secondAttribute="leading" id="E8g-p0-Swm"/>
+                        <constraint firstItem="tgJ-k0-30m" firstAttribute="leading" secondItem="bhh-i0-v43" secondAttribute="leading" id="SIs-cL-uWH"/>
+                        <constraint firstAttribute="bottom" secondItem="5Ti-XV-awz" secondAttribute="bottom" id="Uq4-lg-55A"/>
+                        <constraint firstAttribute="trailing" secondItem="5Ti-XV-awz" secondAttribute="trailing" id="a8J-lS-7BK"/>
+                        <constraint firstAttribute="trailing" secondItem="tgJ-k0-30m" secondAttribute="trailing" id="txq-fl-6Hi"/>
+                        <constraint firstItem="5Ti-XV-awz" firstAttribute="top" secondItem="tgJ-k0-30m" secondAttribute="bottom" constant="16" id="xMR-tQ-ZVq"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="bhh-i0-v43" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="1c6-EH-0jB"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="bhh-i0-v43" secondAttribute="trailing" constant="24" id="BI9-5Z-oaJ"/>
+                <constraint firstItem="bhh-i0-v43" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="24" id="lru-R7-vFe"/>
+                <constraint firstItem="bhh-i0-v43" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="o4m-bL-avf"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="baseView" destination="bhh-i0-v43" id="Mbd-EL-IOk"/>
+                <outlet property="closeButton" destination="5Ti-XV-awz" id="O3Q-B2-WXh"/>
+                <outlet property="productGradeView" destination="wcr-a7-5Ty" id="ZHd-j5-SbA"/>
+                <outlet property="productNameLabel" destination="RwI-fX-a0Z" id="3Uu-6K-REa"/>
+                <outlet property="productRecallReasonLabel" destination="v8n-I3-XfA" id="d4K-uS-Ex3"/>
+            </connections>
+            <point key="canvasLocation" x="-62.318840579710148" y="150"/>
+        </view>
+    </objects>
+</document>

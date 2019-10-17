@@ -15,6 +15,9 @@
 		710F8E122348DC8200B3B057 /* FoodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710F8E112348DC8200B3B057 /* FoodingTests.swift */; };
 		710F8E1F2348E4AF00B3B057 /* BarcodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710F8E1E2348E4AF00B3B057 /* BarcodeScannerView.swift */; };
 		710F8E212348E5DC00B3B057 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710F8E202348E5DC00B3B057 /* ListViewController.swift */; };
+		712D8B7B2357614E0029372A /* ScanResultPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712D8B7A2357614E0029372A /* ScanResultPopupView.swift */; };
+		712D8B7D235761620029372A /* ScanResultPopupViewXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 712D8B7C235761620029372A /* ScanResultPopupViewXib.xib */; };
+		712D8B7F23587BB10029372A /* ScanResultPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712D8B7E23587BB10029372A /* ScanResultPopupViewController.swift */; };
 		71DD794F2349D9BB00139E87 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD794E2349D9BB00139E87 /* Colors.swift */; };
 		71DD79512349E47800139E87 /* ProductTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD79502349E47800139E87 /* ProductTableView.swift */; };
 		71DD79532349E55300139E87 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD79522349E55300139E87 /* ProductTableViewCell.swift */; };
@@ -48,6 +51,9 @@
 		710F8E132348DC8200B3B057 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		710F8E1E2348E4AF00B3B057 /* BarcodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerView.swift; sourceTree = "<group>"; };
 		710F8E202348E5DC00B3B057 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		712D8B7A2357614E0029372A /* ScanResultPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultPopupView.swift; sourceTree = "<group>"; };
+		712D8B7C235761620029372A /* ScanResultPopupViewXib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanResultPopupViewXib.xib; sourceTree = "<group>"; };
+		712D8B7E23587BB10029372A /* ScanResultPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultPopupViewController.swift; sourceTree = "<group>"; };
 		71DD794E2349D9BB00139E87 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		71DD79502349E47800139E87 /* ProductTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableView.swift; sourceTree = "<group>"; };
 		71DD79522349E55300139E87 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
@@ -125,6 +131,7 @@
 				710F8DFE2348DC7C00B3B057 /* BarcodeScanViewController.swift */,
 				710F8E202348E5DC00B3B057 /* ListViewController.swift */,
 				71DD7956234A2C9900139E87 /* ProductDetailViewController.swift */,
+				712D8B7E23587BB10029372A /* ScanResultPopupViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -136,6 +143,8 @@
 				71DD79502349E47800139E87 /* ProductTableView.swift */,
 				71DD79522349E55300139E87 /* ProductTableViewCell.swift */,
 				71DD7954234A277600139E87 /* ProductGradeView.swift */,
+				712D8B7A2357614E0029372A /* ScanResultPopupView.swift */,
+				712D8B7C235761620029372A /* ScanResultPopupViewXib.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -240,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				710F8E072348DC8100B3B057 /* LaunchScreen.storyboard in Resources */,
+				712D8B7D235761620029372A /* ScanResultPopupViewXib.xib in Resources */,
 				710F8E042348DC8100B3B057 /* Assets.xcassets in Resources */,
 				710F8E022348DC7C00B3B057 /* Main.storyboard in Resources */,
 			);
@@ -260,8 +270,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				71DD7955234A277600139E87 /* ProductGradeView.swift in Sources */,
+				712D8B7F23587BB10029372A /* ScanResultPopupViewController.swift in Sources */,
 				71DD7960234B8A0C00139E87 /* Recall.swift in Sources */,
 				710F8E1F2348E4AF00B3B057 /* BarcodeScannerView.swift in Sources */,
+				712D8B7B2357614E0029372A /* ScanResultPopupView.swift in Sources */,
 				71DD7957234A2C9900139E87 /* ProductDetailViewController.swift in Sources */,
 				71DD794F2349D9BB00139E87 /* Colors.swift in Sources */,
 				71DD795D234B871100139E87 /* FoodSafeAPIType.swift in Sources */,
