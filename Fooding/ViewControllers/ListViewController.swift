@@ -15,6 +15,12 @@ class ListViewController: UIViewController {
     fileprivate var dataItems: Recall!
     fileprivate var filteredItems = [Row]()
     fileprivate var searchController = UISearchController(searchResultsController: nil)
+    fileprivate let indicator: UIActivityIndicatorView = {
+       let ai = UIActivityIndicatorView()
+        ai.color = .black
+        ai.hidesWhenStopped = true
+        return ai
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +39,10 @@ class ListViewController: UIViewController {
         
         productTableView.selectDelegate = self
         
+        indicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        self.view.addSubview(indicator)
+        indicator.center = self.view.center
+        indicator.startAnimating()
         requestProductList(.recall)
         NotificationCenter.default.addObserver(self, selector: #selector(didReceiveProductList(_:)), name: DidReceiveProductList, object: nil)
         customerDeclarationButton.target = self
@@ -46,6 +56,7 @@ class ListViewController: UIViewController {
         
         dataItems = data
         DispatchQueue.main.async {
+            self.indicator.stopAnimating()
             self.productTableView.items = data.i0490.row
             self.productTableView.reloadData()
         }
