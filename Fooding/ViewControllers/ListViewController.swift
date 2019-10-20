@@ -21,32 +21,19 @@ class ListViewController: UIViewController {
         ai.hidesWhenStopped = true
         return ai
     }()
+    fileprivate let refreshControl: UIRefreshControl = {
+        let rc = UIRefreshControl()
+        rc.addTarget(self, action: #selector(refreshTableView), for: .valueChanged)
+        return rc
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = .lightGrey
-        self.definesPresentationContext = true
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationItem.largeTitleDisplayMode = .automatic
-        self.navigationItem.searchController = searchController
-        
-        searchController.searchBar.delegate = self
-        searchController.searchResultsUpdater = self
-        searchController.delegate = self
-        searchController.dimsBackgroundDuringPresentation = false
-        
-        productTableView.selectDelegate = self
-        
-        indicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-        self.view.addSubview(indicator)
-        indicator.center = self.view.center
+        commonInit()
         indicator.startAnimating()
         requestProductList(.recall)
-        NotificationCenter.default.addObserver(self, selector: #selector(didReceiveProductList(_:)), name: DidReceiveProductList, object: nil)
-        customerDeclarationButton.target = self
-        customerDeclarationButton.action = #selector(touchedCustomerDeclarationButton(_:))
     }
     
     @objc func didReceiveProductList(_ noti: Notification) {
@@ -60,6 +47,10 @@ class ListViewController: UIViewController {
             self.productTableView.items = data.i0490.row
             self.productTableView.reloadData()
         }
+    }
+    
+    @objc private func refreshTableView() {
+        requestProductList(.recall)
     }
     
     @objc private func touchedCustomerDeclarationButton(_ sender: UIBarButtonItem) {
@@ -80,6 +71,30 @@ class ListViewController: UIViewController {
         alertController.addAction(webAction)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    private func commonInit() {
+        self.view.backgroundColor = .lightGrey
+        self.definesPresentationContext = true
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationItem.largeTitleDisplayMode = .automatic
+        self.navigationItem.searchController = searchController
+        
+        searchController.searchBar.delegate = self
+        searchController.searchResultsUpdater = self
+        searchController.delegate = self
+        searchController.dimsBackgroundDuringPresentation = false
+        
+        productTableView.selectDelegate = self
+        productTableView.refreshControl = refreshControl
+        
+        indicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        self.view.addSubview(indicator)
+        indicator.center = self.view.center
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(didReceiveProductList(_:)), name: DidReceiveProductList, object: nil)
+        customerDeclarationButton.target = self
+        customerDeclarationButton.action = #selector(touchedCustomerDeclarationButton(_:))
     }
 }
 
