@@ -78,4 +78,9 @@ extension Row {
         }
         return Data()
     }
+    
+    var actionDateString: String {
+        let endIndex = cretDtm.index(cretDtm.startIndex, offsetBy: 10)
+        return String(cretDtm[...endIndex])
+    }
 }

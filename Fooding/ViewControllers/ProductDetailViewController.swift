@@ -34,6 +34,7 @@ class ProductDetailViewController: UIViewController {
         self.navigationItem.title = item?.prdtnm
         self.productImageView.contentMode = .scaleAspectFill
         self.productRecallLabel.textColor = .pomegranate
+        self.companyAddressLabel.numberOfLines = 0
         
         self.productImageView.isUserInteractionEnabled = true
         self.productImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(touchedProductImageView(_:))))
@@ -43,7 +44,7 @@ class ProductDetailViewController: UIViewController {
         super.viewWillAppear(animated)
         productImageView.image = UIImage(data: item!.imageData)
         productRecallLabel.text = item?.rtrvlprvns
-        actionDateLabel.text = item?.cretDtm
+        actionDateLabel.text = item?.actionDateString
         productGradeView.grade = Grade(rawValue: item!.rtrvlGrdcdNm)!
         productionDateLabel.text = item?.mnfdt
         expirationDateLabel.text = item?.distbtmlmt

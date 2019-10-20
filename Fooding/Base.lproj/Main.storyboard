@@ -147,23 +147,23 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4wB-yM-heq">
                                                 <rect key="frame" x="16" y="342.5" width="382" height="354.5"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="g6G-kw-JpW">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="g6G-kw-JpW">
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="354.5"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="7yn-ju-xuB">
-                                                                <rect key="frame" x="0.0" y="0.0" width="193" height="56"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="56"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lqS-Kk-YHg">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="121" height="56"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="310" height="56"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsX-W0-35L">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="121" height="28.5"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="310" height="28.5"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZKc-V7-NKL">
-                                                                                <rect key="frame" x="0.0" y="36.5" width="121" height="19.5"/>
+                                                                                <rect key="frame" x="0.0" y="36.5" width="310" height="19.5"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="회수 및 판매중지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sR1-rL-DL8">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="105.5" height="19.5"/>
@@ -172,7 +172,7 @@
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddy-Yc-akN">
-                                                                                        <rect key="frame" x="113.5" y="0.0" width="7.5" height="19.5"/>
+                                                                                        <rect key="frame" x="113.5" y="0.0" width="196.5" height="19.5"/>
                                                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                                                         <nil key="textColor"/>
                                                                                         <nil key="highlightedColor"/>
@@ -182,7 +182,7 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Vh-Vz-rkN" customClass="ProductGradeView" customModule="Fooding" customModuleProvider="target">
-                                                                        <rect key="frame" x="137" y="0.0" width="56" height="56"/>
+                                                                        <rect key="frame" x="326" y="0.0" width="56" height="56"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="8Vh-Vz-rkN" secondAttribute="height" multiplier="1:1" id="Ghf-rv-JU0"/>
@@ -192,7 +192,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cBd-nl-3ID">
-                                                                <rect key="frame" x="0.0" y="80" width="103" height="139"/>
+                                                                <rect key="frame" x="0.0" y="80" width="382" height="139"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제품정보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Lj-Pl-g0q">
                                                                         <rect key="frame" x="0.0" y="0.0" width="83.5" height="29"/>
@@ -271,7 +271,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iKc-ZR-3Ma">
-                                                                <rect key="frame" x="0.0" y="243" width="103" height="111.5"/>
+                                                                <rect key="frame" x="0.0" y="243" width="382" height="111.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="업체정보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6R-fn-5KC">
                                                                         <rect key="frame" x="0.0" y="0.0" width="83.5" height="29"/>
@@ -297,16 +297,16 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5sT-I2-yHR">
-                                                                        <rect key="frame" x="0.0" y="64.5" width="103" height="19.5"/>
+                                                                        <rect key="frame" x="0.0" y="64.5" width="119" height="19.5"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="업체주소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEy-dZ-GXZ">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="업체주소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEy-dZ-GXZ">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="55.5" height="19.5"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gT4-Dn-wVc">
-                                                                                <rect key="frame" x="63.5" y="0.0" width="39.5" height="19.5"/>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gT4-Dn-wVc">
+                                                                                <rect key="frame" x="63.5" y="0.0" width="55.5" height="19.5"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
