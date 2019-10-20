@@ -20,6 +20,7 @@
 		712D8B7F23587BB10029372A /* ScanResultPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712D8B7E23587BB10029372A /* ScanResultPopupViewController.swift */; };
 		712D8B81235899D20029372A /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712D8B80235899D20029372A /* SettingViewController.swift */; };
 		712D8B8323589BA90029372A /* SettingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712D8B8223589BA90029372A /* SettingTableView.swift */; };
+		712D8B87235C7CCE0029372A /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712D8B86235C7CCE0029372A /* ImageDetailViewController.swift */; };
 		71DD794F2349D9BB00139E87 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD794E2349D9BB00139E87 /* Colors.swift */; };
 		71DD79512349E47800139E87 /* ProductTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD79502349E47800139E87 /* ProductTableView.swift */; };
 		71DD79532349E55300139E87 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD79522349E55300139E87 /* ProductTableViewCell.swift */; };
@@ -58,6 +59,7 @@
 		712D8B7E23587BB10029372A /* ScanResultPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultPopupViewController.swift; sourceTree = "<group>"; };
 		712D8B80235899D20029372A /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		712D8B8223589BA90029372A /* SettingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableView.swift; sourceTree = "<group>"; };
+		712D8B86235C7CCE0029372A /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
 		71DD794E2349D9BB00139E87 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		71DD79502349E47800139E87 /* ProductTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableView.swift; sourceTree = "<group>"; };
 		71DD79522349E55300139E87 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				710F8E202348E5DC00B3B057 /* ListViewController.swift */,
 				71DD7956234A2C9900139E87 /* ProductDetailViewController.swift */,
 				712D8B7E23587BB10029372A /* ScanResultPopupViewController.swift */,
+				712D8B86235C7CCE0029372A /* ImageDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				710F8DFF2348DC7C00B3B057 /* BarcodeScanViewController.swift in Sources */,
 				71DD79512349E47800139E87 /* ProductTableView.swift in Sources */,
 				71DD7959234B843A00139E87 /* Request.swift in Sources */,
+				712D8B87235C7CCE0029372A /* ImageDetailViewController.swift in Sources */,
 				710F8E212348E5DC00B3B057 /* ListViewController.swift in Sources */,
 				710F8DFD2348DC7C00B3B057 /* AppDelegate.swift in Sources */,
 			);

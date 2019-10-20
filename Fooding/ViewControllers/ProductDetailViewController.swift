@@ -34,6 +34,9 @@ class ProductDetailViewController: UIViewController {
         self.navigationItem.title = item?.prdtnm
         self.productImageView.contentMode = .scaleAspectFill
         self.productRecallLabel.textColor = .pomegranate
+        
+        self.productImageView.isUserInteractionEnabled = true
+        self.productImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(touchedProductImageView(_:))))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,5 +52,11 @@ class ProductDetailViewController: UIViewController {
         companyNameLabel.text = item?.bsshnm
         companyAddressLabel.text = item?.addr
         companyContactLabel.text = item?.prcscitypointTelno
+    }
+    
+    @objc private func touchedProductImageView(_ gesture: UITapGestureRecognizer) {
+        let imageDetailViewController = ImageDetailViewController(nibName: nil, bundle: nil)
+        imageDetailViewController.imageData = item!.imageData
+        self.navigationController?.pushViewController(imageDetailViewController, animated: true)
     }
 }
