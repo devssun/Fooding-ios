@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageUI
 
 class SettingViewController: UIViewController {
     
@@ -22,6 +23,13 @@ class SettingViewController: UIViewController {
 
 extension SettingViewController: SettingTableViewDelegate {
     func selectItem(_ index: Int) {
+        let composeVC = MFMailComposeViewController()
         
+        // Configure the fields of the interface.
+        composeVC.setToRecipients(["chocochic85@gmail.com"])
+        composeVC.setSubject("[Fooding] 앱 문의!")
+        
+        // Present the view controller modally.
+        self.present(composeVC, animated: true, completion: nil)
     }
 }
