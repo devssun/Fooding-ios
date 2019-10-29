@@ -34,6 +34,7 @@ class ProductDetailViewController: UIViewController {
         self.navigationItem.title = item?.prdtnm
         self.productImageView.contentMode = .scaleAspectFill
         self.productRecallLabel.textColor = .pomegranate
+        self.productRecallLabel.adjustsFontSizeToFitWidth = true
         self.companyAddressLabel.numberOfLines = 0
         
         self.productImageView.isUserInteractionEnabled = true
@@ -42,7 +43,9 @@ class ProductDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        productImageView.image = UIImage(data: item!.imageData)
+        DispatchQueue.main.async {
+            self.productImageView.image = UIImage(data: self.item!.imageData)
+        }
         productRecallLabel.text = item?.rtrvlprvns
         actionDateLabel.text = item?.actionDateString
         productGradeView.grade = Grade(rawValue: item!.rtrvlGrdcdNm)!
