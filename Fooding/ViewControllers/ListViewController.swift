@@ -12,7 +12,7 @@ class ListViewController: UIViewController {
     
     @IBOutlet fileprivate weak var customerDeclarationButton: UIBarButtonItem!
     @IBOutlet fileprivate weak var productTableView: ProductTableView!
-    fileprivate var dataItems: Recall!
+    fileprivate var dataItems = [Row]()
     fileprivate var filteredItems = [Row]()
     fileprivate var searchController = UISearchController(searchResultsController: nil)
     fileprivate let indicator: UIActivityIndicatorView = {
@@ -26,6 +26,8 @@ class ListViewController: UIViewController {
         rc.addTarget(self, action: #selector(refreshTableView), for: .valueChanged)
         return rc
     }()
+    fileprivate var startIndex: Int = 1
+    fileprivate var endIndex: Int = 20
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,10 +43,11 @@ class ListViewController: UIViewController {
             return
         }
         
-        dataItems = data
+        dataItems += data.i0490.row
         DispatchQueue.main.async {
             self.indicator.stopAnimating()
-            self.productTableView.items = data.i0490.row
+            self.productTableView.isLoadMore = false
+            self.productTableView.items += data.i0490.row
             self.productTableView.reloadData()
         }
     }
@@ -85,7 +88,7 @@ class ListViewController: UIViewController {
         searchController.delegate = self
         searchController.dimsBackgroundDuringPresentation = false
         
-        productTableView.selectDelegate = self
+        productTableView.productDelegate = self
         productTableView.refreshControl = refreshControl
         
         indicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
@@ -102,17 +105,26 @@ extension ListViewController: ProductTableViewDelegate {
     func selectProduct(_ index: Int) {
         if let productDetailViewController =
             self.storyboard?.instantiateViewController(withIdentifier: "ProductDetailViewController") as? ProductDetailViewController {
-            productDetailViewController.item = searchController.isActive ? filteredItems[index] : dataItems.i0490.row[index]
+            productDetailViewController.item = searchController.isActive ? filteredItems[index] : dataItems[index]
            self.navigationController?.pushViewController(productDetailViewController, animated: true)
         }
+    }
+    
+    func loadMoreProducts() {
+        // load
+        print("loadMoreProducts startIdx \(startIndex) endIdx \(endIndex)")
+        startIndex = endIndex + 1
+        endIndex += 20
+        print("end startIdx \(startIndex) endIdx \(endIndex)")
+        indicator.startAnimating()
+        requestProductList(.recall, startIdx: startIndex, endIndex: endIndex)
     }
 }
 
 extension ListViewController: UISearchBarDelegate, UISearchResultsUpdating, UISearchControllerDelegate {
     func updateSearchResults(for searchController: UISearchController) {
         if searchController.isActive {
-            guard dataItems != nil else { return }
-            let fileteredData = dataItems.i0490.row.filter({ (data: Row) -> Bool in
+            let fileteredData = dataItems.filter({ (data: Row) -> Bool in
                 return data.prdtnm.contains(searchController.searchBar.text!.lowercased())
             })
             
@@ -126,7 +138,7 @@ extension ListViewController: UISearchBarDelegate, UISearchResultsUpdating, UISe
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         DispatchQueue.main.async {
-            self.productTableView.items = self.dataItems.i0490.row
+            self.productTableView.items = self.dataItems
             self.productTableView.reloadData()
         }
     }

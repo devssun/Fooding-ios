@@ -32,7 +32,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h3h-wJ-eWE">
                                                     <rect key="frame" x="16" y="8" width="382" height="108"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tmg-article_default_mobile" translatesAutoresizingMaskIntoConstraints="NO" id="s6b-nj-XFg">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s6b-nj-XFg">
                                                             <rect key="frame" x="16" y="14" width="80" height="80"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="s6b-nj-XFg" secondAttribute="height" multiplier="1:1" id="od0-1c-pUQ"/>
@@ -524,6 +524,5 @@
         <image name="barcode" width="24" height="24"/>
         <image name="list" width="24" height="24"/>
         <image name="more" width="24" height="24"/>
-        <image name="tmg-article_default_mobile" width="480" height="325"/>
     </resources>
 </document>

@@ -18,7 +18,9 @@ class ProductTableViewCell: UITableViewCell {
     
     var item: Row? {
         didSet {
-            productImageView.image = UIImage(data: item!.imageData)
+            DispatchQueue.main.async {
+                self.productImageView.image = UIImage(data: self.item!.imageData)
+            }
             productNameLabel.text = item?.prdtnm
             productRecallLabel.text = item?.rtrvlprvns
             productRecallGradeView.grade = Grade(rawValue: item!.rtrvlGrdcdNm)!

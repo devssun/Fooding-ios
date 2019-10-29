@@ -35,7 +35,7 @@ class SettingTableView: UITableView {
 
 extension SettingTableView: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -43,6 +43,7 @@ extension SettingTableView: UITableViewDataSource, UITableViewDelegate {
         
         cell.selectionStyle = .none
         cell.accessoryType = .disclosureIndicator
+        cell.textLabel?.text = "개발자에게 문의하기"
         
         return cell
     }

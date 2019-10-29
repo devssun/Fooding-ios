@@ -10,11 +10,13 @@ import UIKit
 
 protocol ProductTableViewDelegate: class {
     func selectProduct(_ index: Int)
+    func loadMoreProducts()
 }
 
 class ProductTableView: UITableView {
-    weak var selectDelegate: ProductTableViewDelegate?
+    weak var productDelegate: ProductTableViewDelegate?
     var items = [Row]()
+    var isLoadMore: Bool = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -57,6 +59,14 @@ extension ProductTableView: UITableViewDataSource {
 
 extension ProductTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectDelegate?.selectProduct(indexPath.row)
+        productDelegate?.selectProduct(indexPath.row)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if !isLoadMore && indexPath.row == (items.count - 1) {
+            print("load more \(indexPath.row)")
+            isLoadMore = true
+            productDelegate?.loadMoreProducts()
+        }
     }
 }
