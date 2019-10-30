@@ -1,0 +1,8 @@
+app_identifier("com.dev.Fooding") # The bundle identifier of your app
+apple_id("chocochic85@gmail.com") # Your Apple email address
+
+itc_team_id("120091202") # App Store Connect Team ID
+team_id("H899557VXN") # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile
