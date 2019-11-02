@@ -7,14 +7,14 @@
 //
 
 import UIKit
+import XLPagerTabStrip
 
 class ListViewController: UIViewController {
     
-    @IBOutlet fileprivate weak var customerDeclarationButton: UIBarButtonItem!
     @IBOutlet fileprivate weak var productTableView: ProductTableView!
     fileprivate var dataItems = [Row]()
     fileprivate var filteredItems = [Row]()
-    fileprivate var searchController = UISearchController(searchResultsController: nil)
+    
     fileprivate let indicator: UIActivityIndicatorView = {
        let ai = UIActivityIndicatorView()
         ai.color = .black
@@ -56,37 +56,8 @@ class ListViewController: UIViewController {
         requestProductList(.recall)
     }
     
-    @objc private func touchedCustomerDeclarationButton(_ sender: UIBarButtonItem) {
-        // 소비자 신고
-        let alertController = UIAlertController(title: "소비자 신고", message: "구입한 식품에 이상이 있다면 아래에 신고하세요", preferredStyle: .actionSheet)
-        let callAction = UIAlertAction(title: "식품안전 소비자 신고센터 1399", style: .default) { (_) in
-            if let tel = URL(string: "tel://1399") {
-                UIApplication.shared.open(tel, options: [:], completionHandler: nil)
-            }
-        }
-        let webAction = UIAlertAction(title: "식품의약품안전처 통합민원상담서비스 홈페이지", style: .default) { (_) in
-            if let url = URL(string: "https://www.foodsafetykorea.go.kr/minwon/complain/customerNotify.do?menu_no=621&menu_grp=MENU_GRP24") {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            }
-        }
-        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
-        alertController.addAction(callAction)
-        alertController.addAction(webAction)
-        alertController.addAction(cancelAction)
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
     private func commonInit() {
         self.view.backgroundColor = .lightGrey
-        self.definesPresentationContext = true
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationItem.largeTitleDisplayMode = .automatic
-        self.navigationItem.searchController = searchController
-        
-        searchController.searchBar.delegate = self
-        searchController.searchResultsUpdater = self
-        searchController.delegate = self
-        searchController.dimsBackgroundDuringPresentation = false
         
         productTableView.productDelegate = self
         productTableView.refreshControl = refreshControl
@@ -96,8 +67,6 @@ class ListViewController: UIViewController {
         indicator.center = self.view.center
         
         NotificationCenter.default.addObserver(self, selector: #selector(didReceiveProductList(_:)), name: DidReceiveProductList, object: nil)
-        customerDeclarationButton.target = self
-        customerDeclarationButton.action = #selector(touchedCustomerDeclarationButton(_:))
     }
 }
 
@@ -105,7 +74,8 @@ extension ListViewController: ProductTableViewDelegate {
     func selectProduct(_ index: Int) {
         if let productDetailViewController =
             self.storyboard?.instantiateViewController(withIdentifier: "ProductDetailViewController") as? ProductDetailViewController {
-            productDetailViewController.item = searchController.isActive ? filteredItems[index] : dataItems[index]
+//            productDetailViewController.item = searchController.isActive ? filteredItems[index] : dataItems[index]
+            productDetailViewController.item = dataItems[index]
            self.navigationController?.pushViewController(productDetailViewController, animated: true)
         }
     }
@@ -121,25 +91,8 @@ extension ListViewController: ProductTableViewDelegate {
     }
 }
 
-extension ListViewController: UISearchBarDelegate, UISearchResultsUpdating, UISearchControllerDelegate {
-    func updateSearchResults(for searchController: UISearchController) {
-        if searchController.isActive {
-            let fileteredData = dataItems.filter({ (data: Row) -> Bool in
-                return data.prdtnm.contains(searchController.searchBar.text!.lowercased())
-            })
-            
-            self.filteredItems = fileteredData
-            DispatchQueue.main.async {
-                self.productTableView.items = fileteredData
-                self.productTableView.reloadData()
-            }
-        }
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        DispatchQueue.main.async {
-            self.productTableView.items = self.dataItems
-            self.productTableView.reloadData()
-        }
+extension ListViewController: IndicatorInfoProvider {
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return IndicatorInfo(title: "회수﹒판매중지")
     }
 }
