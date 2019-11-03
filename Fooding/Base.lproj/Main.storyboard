@@ -13,7 +13,7 @@
         <!--List-->
         <scene sceneID="fMg-ea-vla">
             <objects>
-                <viewController storyboardIdentifier="child1" title="List" id="hnT-J5-1x0" customClass="ListViewController" customModule="Fooding" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="child1" title="List" id="hnT-J5-1x0" customClass="RecallProductListViewController" customModule="Fooding" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Os0-jA-Cix">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

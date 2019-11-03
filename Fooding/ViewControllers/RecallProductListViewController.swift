@@ -9,7 +9,7 @@
 import UIKit
 import XLPagerTabStrip
 
-class ListViewController: UIViewController {
+class RecallProductListViewController: UIViewController {
     
     @IBOutlet fileprivate weak var productTableView: ProductTableView!
     fileprivate var dataItems = [Row]()
@@ -70,7 +70,7 @@ class ListViewController: UIViewController {
     }
 }
 
-extension ListViewController: ProductTableViewDelegate {
+extension RecallProductListViewController: ProductTableViewDelegate {
     func selectProduct(_ index: Int) {
         if let productDetailViewController =
             self.storyboard?.instantiateViewController(withIdentifier: "ProductDetailViewController") as? ProductDetailViewController {
@@ -91,7 +91,7 @@ extension ListViewController: ProductTableViewDelegate {
     }
 }
 
-extension ListViewController: IndicatorInfoProvider {
+extension RecallProductListViewController: IndicatorInfoProvider {
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title: "회수﹒판매중지")
     }
