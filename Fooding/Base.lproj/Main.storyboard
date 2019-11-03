@@ -579,10 +579,10 @@
             </objects>
             <point key="canvasLocation" x="1243" y="891"/>
         </scene>
-        <!--Child View Controller2-->
+        <!--Test Failure Product List View Controller-->
         <scene sceneID="306-Y3-zEC">
             <objects>
-                <viewController storyboardIdentifier="child2" id="7yc-6f-FRe" customClass="ChildViewController2" customModule="Fooding" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="child2" id="7yc-6f-FRe" customClass="TestFailureProductListViewController" customModule="Fooding" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ST3-CC-qFE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

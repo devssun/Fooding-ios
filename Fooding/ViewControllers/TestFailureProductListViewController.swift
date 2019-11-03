@@ -9,7 +9,7 @@
 import UIKit
 import XLPagerTabStrip
 
-class ChildViewController2: UIViewController, IndicatorInfoProvider {
+class TestFailureProductListViewController: UIViewController, IndicatorInfoProvider {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
