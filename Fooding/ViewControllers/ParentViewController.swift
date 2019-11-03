@@ -49,7 +49,6 @@ class ParentViewController: ButtonBarPagerTabStripViewController {
         super.viewDidLoad()
     }
     
-    // TODO:- UIAlertController 뜨게
     @objc private func touchedCustomerDeclarationButton(_ sender: UIBarButtonItem) {
         // 소비자 신고
         let alertController = UIAlertController(title: "소비자 신고", message: "구입한 식품에 이상이 있다면 아래에 신고하세요", preferredStyle: .actionSheet)

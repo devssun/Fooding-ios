@@ -507,7 +507,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="OrM-fT-uPc" kind="relationship" relationship="rootViewController" id="ZN8-M3-dD5"/>
+                        <segue destination="OrM-fT-uPc" kind="relationship" relationship="rootViewController" id="I3V-wM-t65"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KeB-cf-fYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -562,32 +562,17 @@
                         <viewLayoutGuide key="safeArea" id="noB-fJ-9rf"/>
                     </view>
                     <navigationItem key="navigationItem" title="Fooding" id="i5c-16-n3q">
-                        <barButtonItem key="leftBarButtonItem" title="소비자신고" id="yCB-pl-CDP">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Yrp-bS-uJc">
-                                <rect key="frame" x="20" y="7" width="92" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="소비자신고"/>
-                            </button>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="more" id="w8r-Xa-8R4">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kd6-Ap-aNk">
-                                <rect key="frame" x="370" y="10" width="24" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="more"/>
-                            </button>
+                        <barButtonItem key="leftBarButtonItem" title="소비자신고" id="eoP-U5-chJ"/>
+                        <barButtonItem key="rightBarButtonItem" image="more" id="cnq-J9-EgL">
                             <connections>
-                                <segue destination="hVE-Ka-MK8" kind="show" id="Dfd-Qr-dQZ"/>
+                                <segue destination="hVE-Ka-MK8" kind="show" id="zax-mS-7D8"/>
                             </connections>
                         </barButtonItem>
-                        <connections>
-                            <outlet property="leftBarButtonItem" destination="yCB-pl-CDP" id="gWL-jL-vgl"/>
-                            <outlet property="rightBarButtonItem" destination="w8r-Xa-8R4" id="jkY-a5-iMv"/>
-                        </connections>
                     </navigationItem>
                     <connections>
                         <outlet property="buttonBarView" destination="XFo-ks-dSP" id="AKs-OJ-2J1"/>
                         <outlet property="containerView" destination="aUI-QC-HSf" id="azy-JP-PuG"/>
-                        <outlet property="customerDeclarationButton" destination="yCB-pl-CDP" id="pV7-AZ-ljB"/>
+                        <outlet property="customerDeclarationButton" destination="eoP-U5-chJ" id="saf-Dz-o0X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ty1-Yl-WcI" userLabel="First Responder" sceneMemberID="firstResponder"/>
