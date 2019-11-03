@@ -24,6 +24,9 @@
 		71C323A2236B255300DA3107 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C323A1236B255300DA3107 /* ParentViewController.swift */; };
 		71C323AB236ED35600DA3107 /* RecallProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C323AA236ED35600DA3107 /* RecallProductListViewController.swift */; };
 		71C323AF236ED45500DA3107 /* TestFailureProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C323AE236ED45500DA3107 /* TestFailureProductListViewController.swift */; };
+		71C323B1236F028A00DA3107 /* TestFailure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C323B0236F028A00DA3107 /* TestFailure.swift */; };
+		71C323B3236F0AF600DA3107 /* TestFailureListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C323B2236F0AF600DA3107 /* TestFailureListTableView.swift */; };
+		71C323B5236F0B0700DA3107 /* TestFailureListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C323B4236F0B0700DA3107 /* TestFailureListTableViewCell.swift */; };
 		71DD794F2349D9BB00139E87 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD794E2349D9BB00139E87 /* Colors.swift */; };
 		71DD79512349E47800139E87 /* ProductTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD79502349E47800139E87 /* ProductTableView.swift */; };
 		71DD79532349E55300139E87 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD79522349E55300139E87 /* ProductTableViewCell.swift */; };
@@ -69,6 +72,9 @@
 		71C323A1236B255300DA3107 /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
 		71C323AA236ED35600DA3107 /* RecallProductListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecallProductListViewController.swift; sourceTree = "<group>"; };
 		71C323AE236ED45500DA3107 /* TestFailureProductListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestFailureProductListViewController.swift; sourceTree = "<group>"; };
+		71C323B0236F028A00DA3107 /* TestFailure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFailure.swift; sourceTree = "<group>"; };
+		71C323B2236F0AF600DA3107 /* TestFailureListTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFailureListTableView.swift; sourceTree = "<group>"; };
+		71C323B4236F0B0700DA3107 /* TestFailureListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFailureListTableViewCell.swift; sourceTree = "<group>"; };
 		71DD794E2349D9BB00139E87 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		71DD79502349E47800139E87 /* ProductTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableView.swift; sourceTree = "<group>"; };
 		71DD79522349E55300139E87 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
@@ -169,6 +175,8 @@
 				71DD79502349E47800139E87 /* ProductTableView.swift */,
 				71DD79522349E55300139E87 /* ProductTableViewCell.swift */,
 				71DD7954234A277600139E87 /* ProductGradeView.swift */,
+				71C323B2236F0AF600DA3107 /* TestFailureListTableView.swift */,
+				71C323B4236F0B0700DA3107 /* TestFailureListTableViewCell.swift */,
 				712D8B7A2357614E0029372A /* ScanResultPopupView.swift */,
 				712D8B7C235761620029372A /* ScanResultPopupViewXib.xib */,
 				712D8B8223589BA90029372A /* SettingTableView.swift */,
@@ -190,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				71DD795F234B8A0C00139E87 /* Recall.swift */,
+				71C323B0236F028A00DA3107 /* TestFailure.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -391,9 +400,11 @@
 				71C323AF236ED45500DA3107 /* TestFailureProductListViewController.swift in Sources */,
 				710F8E1F2348E4AF00B3B057 /* BarcodeScannerView.swift in Sources */,
 				712D8B7B2357614E0029372A /* ScanResultPopupView.swift in Sources */,
+				71C323B1236F028A00DA3107 /* TestFailure.swift in Sources */,
 				712D8B81235899D20029372A /* SettingViewController.swift in Sources */,
 				71DD7957234A2C9900139E87 /* ProductDetailViewController.swift in Sources */,
 				71DD794F2349D9BB00139E87 /* Colors.swift in Sources */,
+				71C323B5236F0B0700DA3107 /* TestFailureListTableViewCell.swift in Sources */,
 				71DD795D234B871100139E87 /* FoodSafeAPIType.swift in Sources */,
 				71DD79532349E55300139E87 /* ProductTableViewCell.swift in Sources */,
 				710F8DFF2348DC7C00B3B057 /* BarcodeScanViewController.swift in Sources */,
@@ -401,6 +412,7 @@
 				71DD7959234B843A00139E87 /* Request.swift in Sources */,
 				71C323AB236ED35600DA3107 /* RecallProductListViewController.swift in Sources */,
 				712D8B87235C7CCE0029372A /* ImageDetailViewController.swift in Sources */,
+				71C323B3236F0AF600DA3107 /* TestFailureListTableView.swift in Sources */,
 				710F8DFD2348DC7C00B3B057 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -27,9 +27,18 @@ func requestProductList(_ type: FoodSafeAPIType, startIdx: Int = 1, endIndex: In
         }
         
         do {
-            // type 별로 jsondecoder
-            let apiResponse: Recall = try JSONDecoder().decode(Recall.self, from: data)
-            NotificationCenter.default.post(name: DidReceiveProductList , object: nil, userInfo: ["data": apiResponse])
+            // TODO:- type 별로 jsondecoder
+            switch type {
+            case .recall:
+                let apiResponse: Recall = try JSONDecoder().decode(Recall.self, from: data)
+                NotificationCenter.default.post(name: DidReceiveProductList , object: nil, userInfo: ["data": apiResponse])
+            case .nonconformity:
+                let apiResponse: TestFailure = try JSONDecoder().decode(TestFailure.self, from: data)
+                NotificationCenter.default.post(name: DidReceiveProductList , object: nil, userInfo: ["data": apiResponse])
+            case .exAd, .overseas:
+                break
+            }
+            
         }catch(let error) {
             print(error.localizedDescription)
         }
