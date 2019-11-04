@@ -9,8 +9,9 @@
 import UIKit
 
 class TestFailureListTableView: UITableView {
-    
+    weak var productDelegate: ProductTableViewDelegate?
     var items = [TestFailureRow]()
+    var isLoadMore: Bool = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,6 +29,7 @@ class TestFailureListTableView: UITableView {
     
     private func commonInit() {
         self.dataSource = self
+        self.delegate = self
         self.backgroundColor = .lightGrey
         self.separatorStyle = .none
         self.tableFooterView = UIView(frame: .zero)
@@ -49,5 +51,14 @@ extension TestFailureListTableView: UITableViewDataSource {
         }
         
         fatalError("failure cell error")
+    }
+}
+
+extension TestFailureListTableView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if !isLoadMore && indexPath.row == (items.count - 1) {
+            isLoadMore = true
+            productDelegate?.loadMoreProducts()
+        }
     }
 }

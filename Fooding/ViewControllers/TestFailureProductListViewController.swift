@@ -25,6 +25,8 @@ class TestFailureProductListViewController: UIViewController, IndicatorInfoProvi
         rc.addTarget(self, action: #selector(refreshTableView), for: .valueChanged)
         return rc
     }()
+    fileprivate var startIndex: Int = 1
+    fileprivate var endIndex: Int = 20
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,8 +45,10 @@ class TestFailureProductListViewController: UIViewController, IndicatorInfoProvi
             return
         }
         
+        print(data)
         dataItems += data.i2620.row
         DispatchQueue.main.async {
+            self.testFailureListTableView.isLoadMore = false
             self.indicator.stopAnimating()
             self.refreshControl.endRefreshing()
             self.testFailureListTableView.items += data.i2620.row
@@ -58,6 +62,7 @@ class TestFailureProductListViewController: UIViewController, IndicatorInfoProvi
     
     private func commonInit() {
         self.view.backgroundColor = .lightGrey
+        testFailureListTableView.productDelegate = self
         testFailureListTableView.refreshControl = refreshControl
         
         indicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
@@ -69,5 +74,20 @@ class TestFailureProductListViewController: UIViewController, IndicatorInfoProvi
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title: "검사부적합")
+    }
+}
+
+extension TestFailureProductListViewController: ProductTableViewDelegate {
+    func loadMoreProducts() {
+        print("loadMoreProducts startIdx \(startIndex) endIdx \(endIndex)")
+        startIndex = endIndex + 1
+        endIndex += 20
+        print("end startIdx \(startIndex) endIdx \(endIndex)")
+        indicator.startAnimating()
+        requestProductList(.nonconformity, startIdx: startIndex, endIndex: endIndex)
+    }
+    
+    func selectProduct(_ index: Int) {
+        
     }
 }
