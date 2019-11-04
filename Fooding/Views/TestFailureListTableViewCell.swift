@@ -33,6 +33,8 @@ class TestFailureListTableViewCell: UITableViewCell {
         self.containerView.layer.cornerRadius = 10.0
         self.failureStandardItemNameLabel.textColor = .pomegranate
         self.standardScoreLabel.textColor = .pomegranate
+        self.standardScoreLabel.adjustsFontSizeToFitWidth = true
+        self.standardScoreLabel.numberOfLines = 2
     }
 
     override func prepareForReuse() {

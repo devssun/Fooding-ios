@@ -46,6 +46,7 @@ class RecallProductListViewController: UIViewController {
         dataItems += data.i0490.row
         DispatchQueue.main.async {
             self.indicator.stopAnimating()
+            self.refreshControl.endRefreshing()
             self.productTableView.isLoadMore = false
             self.productTableView.items += data.i0490.row
             self.productTableView.reloadData()

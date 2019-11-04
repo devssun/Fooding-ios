@@ -14,10 +14,27 @@ class TestFailureProductListViewController: UIViewController, IndicatorInfoProvi
     @IBOutlet fileprivate weak var testFailureListTableView: TestFailureListTableView!
     fileprivate var dataItems = [TestFailureRow]()
     
+    fileprivate let indicator: UIActivityIndicatorView = {
+        let ai = UIActivityIndicatorView()
+        ai.color = .black
+        ai.hidesWhenStopped = true
+        return ai
+    }()
+    fileprivate let refreshControl: UIRefreshControl = {
+        let rc = UIRefreshControl()
+        rc.addTarget(self, action: #selector(refreshTableView), for: .valueChanged)
+        return rc
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .lightGrey
-        NotificationCenter.default.addObserver(self, selector: #selector(didReceiveProductList(_:)), name: DidReceiveProductList, object: nil)
+        
+        commonInit()
+        self.indicator.startAnimating()
+        requestProductList(.nonconformity)
+    }
+    
+    @objc private func refreshTableView() {
         requestProductList(.nonconformity)
     }
     
@@ -28,6 +45,8 @@ class TestFailureProductListViewController: UIViewController, IndicatorInfoProvi
         
         dataItems += data.i2620.row
         DispatchQueue.main.async {
+            self.indicator.stopAnimating()
+            self.refreshControl.endRefreshing()
             self.testFailureListTableView.items += data.i2620.row
             self.testFailureListTableView.reloadData()
         }
@@ -35,6 +54,17 @@ class TestFailureProductListViewController: UIViewController, IndicatorInfoProvi
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    private func commonInit() {
+        self.view.backgroundColor = .lightGrey
+        testFailureListTableView.refreshControl = refreshControl
+        
+        indicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        self.view.addSubview(indicator)
+        indicator.center = self.view.center
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(didReceiveProductList(_:)), name: DidReceiveProductList, object: nil)
     }
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
